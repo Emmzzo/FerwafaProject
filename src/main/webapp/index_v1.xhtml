@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui" xmlns:b="http://bootsfaces.net/ui">
+<h:body class="w3-theme-l5">
+	<ui:composition template="/template/common/commonLayout_v1.xhtml">
+		<ui:define name="content">
+
+			<h4>
+				Club Representative &nbsp;<span class="glyphicon glyphicon-dashboard">&nbsp;Dashboard
+				</span>
+			</h4>
+			<div
+				style="border-bottom: 1.5px solid #91DBFA; margin-bottom: 6px; width: 100%"></div>
+				<h:form>
+			<div class="row">
+			
+				<div class="col-sm-6 col-lg-3 card text-white bg-flat-color-1"
+					style="margin-left: 2%;margin-top:2%;">
+					<div class="circle-tile2 card-body pb-0">
+
+						<div class="circle-tile-heading2 ">
+							<i class="glyphicon glyphicon-info-sign fa-fw fa-3x" style="margin-top:5%;"></i>
+							 <br /> <label  style="margin-bottom:8%;">#{teamController.teamSize}</label>&nbsp;<label
+											style="font-family: Open Sans sans-serif !important; font-size: 10px !important;">#{msg['message.team.avail']}</label>
+						</div>
+
+						<div class="circle-tile-content2 ">
+							<div class="circle-tile-description text-faded2">
+							<label style="font-family: Open Sans sans-serif !important; font-size: 18px !important; color: white;">
+							Manage team</label>
+							</div>
+							<div class="circle-tile-number2 text-faded2">
+								<span class="glyphicon glyphicon-road"></span> <span id="sparklineB"></span>
+							</div>
+							<a href="#{loadUserInformationsController.getContextPath()}/menu/Team_v1.xhtml" class="circle-tile-footer">More Info <i
+								class="glyphicon glyphicon-chevron-right"></i></a>
+						</div>
+					</div>
+
+				</div>
+				<div class="col-sm-6 col-lg-4 card text-white bg-flat-color-5"
+					style="margin-left: 5%;margin-top:2%;">
+					<div class="circle-tile2 card-body pb-0">
+
+						<div class="circle-tile-heading2 green2">
+							<i class="glyphicon glyphicon-info-sign fa-fw fa-3x" style="margin-top:10%;"></i>
+						</div>
+						<div class="circle-tile-content2  ">
+							<div class="circle-tile-description text-faded2">
+							<label style="font-family: Open Sans sans-serif !important; font-size: 18px !important; color: white;">
+							Manage player</label>
+							</div>
+							<div class="circle-tile-number2 text-faded2">
+								<span class="glyphicon glyphicon-road"></span> <span id="sparklineB"></span>
+							</div>
+							<a href="#{loadUserInformationsController.getContextPath()}/menu/Player_v1.xhtml" class="circle-tile-footer">More Info <i
+								class="glyphicon glyphicon-chevron-right"></i></a>
+						</div>
+					</div>
+
+				</div>
+				<div class="col-sm-6 col-lg-3 card text-white bg-flat-color-3"
+					style="margin-left: 5%;margin-top:2%;">
+					<div class="circle-tile2 card-body pb-0">
+
+						<div class="circle-tile-heading2 yellow2">
+							<i class="glyphicon glyphicon-info-sign fa-fw fa-3x" style="margin-top:10%;"></i>
+						</div>
+						<div class="circle-tile-content2  ">
+							<div class="circle-tile-description text-faded2">
+							<label style="font-family: Open Sans sans-serif !important; font-size: 18px !important; color: white;">
+							#{msg['message.time.table.fixtures']}</label>
+							</div>
+							<div class="circle-tile-number2 text-faded2">
+								<span class="glyphicon glyphicon-road"></span> <span id="sparklineB"></span>
+							</div>
+							<a href="#{loadUserInformationsController.getContextPath()}/menu/ViewFixtures_v1.xhtml" class="circle-tile-footer">More Info <i
+								class="glyphicon glyphicon-chevron-right"></i></a>
+						</div>
+					</div>
+
+				</div>
+				
+				<div class="col-sm-6 col-lg-3 card text-white bg-flat-color-3"
+					style="margin-left: 2%;margin-top:2%;">
+					<div class="circle-tile2 card-body pb-0">
+
+						<div class="circle-tile-heading2 yellow2">
+							<i class="glyphicon glyphicon-info-sign fa-fw fa-3x" style="margin-top:10%;"></i>
+						</div>
+						<div class="circle-tile-content2  ">
+							<div class="circle-tile-description text-faded2">
+							<label style="font-family: Open Sans sans-serif !important; font-size: 18px !important; color: white;">
+							#{msg['message.time.table.matchDetails']}</label>
+							</div>
+							<div class="circle-tile-number2 text-faded2">
+								<span class="glyphicon glyphicon-road"></span> <span id="sparklineB"></span>
+							</div>
+							<a href="#{loadUserInformationsController.getContextPath()}/menu/TeamStandings_v1.xhtml" class="circle-tile-footer">More Info <i
+								class="glyphicon glyphicon-chevron-right"></i></a>
+						</div>
+					</div>
+
+				</div>
+					<div class="col-sm-6 col-lg-4 card text-white bg-flat-color-1"
+					style="margin-left: 5%;margin-top:2%;">
+					<div class="circle-tile2 card-body pb-0">
+
+						<div class="circle-tile-heading2">
+							<i class="glyphicon glyphicon-info-sign fa-fw fa-3x" style="margin-top:10%;"></i>
+						</div>
+						<div class="circle-tile-content2  ">
+							<div class="circle-tile-description text-faded2">
+							<label style="font-family: Open Sans sans-serif !important; font-size: 18px !important; color: white;">
+							#{msg['message.time.table.playerstat']}</label>
+							</div>
+							<div class="circle-tile-number2 text-faded2">
+								<span class="glyphicon glyphicon-road"></span> <span id="sparklineB"></span>
+							</div>
+							<a href="#{loadUserInformationsController.getContextPath()}/menu/PlayerStatistics_v1.xhtml" class="circle-tile-footer">More Info <i
+								class="glyphicon glyphicon-chevron-right"></i></a>
+						</div>
+					</div>
+
+				</div>
+				<div class="col-sm-6 col-lg-3 card text-white bg-flat-color-5"
+					style="margin-left: 5%;margin-top:2%;">
+					<div class="circle-tile2 card-body pb-0">
+
+						<div class="circle-tile-heading2 green2">
+							<i class="glyphicon glyphicon-info-sign fa-fw fa-3x" style="margin-top:10%;"></i>
+						</div>
+						<div class="circle-tile-content2  ">
+							<div class="circle-tile-description text-faded2">
+							<label style="font-family: Open Sans sans-serif !important; font-size: 18px !important; color: white;">
+							Manage your profile</label>
+							</div>
+							<div class="circle-tile-number2 text-faded2">
+								<span class="glyphicon glyphicon-road"></span> <span id="sparklineB"></span>
+							</div>
+							<a href="#{loadUserInformationsController.getContextPath()}/menu/TeamProfile.xhtml" class="circle-tile-footer">More Info <i
+								class="glyphicon glyphicon-chevron-right"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>	
+			</h:form>	
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>
+
+

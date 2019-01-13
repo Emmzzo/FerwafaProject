@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui" xmlns:b="http://bootsfaces.net/ui"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+<!-- <h:head>
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1,maximum-sacale=1" />
+</h:head> -->
+<h:body>
+	<ui:composition template="/templateHome/common/commonStyle.xhtml">
+		<ui:define name="content">
+		<style>
+.ui-growl-item-container {
+	background-color: #337ab7;
+}
+
+.ui-growl-icon-close {
+	cursor: pointer;
+	position: absolute;
+	left: 335px;
+	top: 15px;
+}
+.ui-growl-title {
+	font: 13px "Open Sans sans-serif !important;
+	/* text-align: center; */
+}
+
+.ui-growl-message p {
+	font: 12px "Open Sans sans-serif !important;
+letter-spacing: -1px; 
+}
+.ui-growl-image-info ~ .ui-growl-message {
+	color:#fff;
+}
+
+.ui-growl-image-error ~ .ui-growl-message {
+	color: #fff;
+}
+
+.ui-growl-image-warn ~ .ui-growl-message {
+	color: black;
+}
+
+.ui-growl-image-fatal ~ .ui-growl-message {
+	color: black;
+}
+</style>
+			<h:form>
+				<!-- start banner Area -->
+				<section class="banner-area relative" id="home">
+				<div class="overlay overlay-bg"></div>
+				<div class="container">
+					<div class="row d-flex align-items-center justify-content-center">
+						<div class="about-content col-lg-12">
+							<h1 class="text-white">Contact Us</h1>
+							<p class="text-white link-nav">
+								<a href="home.xhtml">Home </a> <span class="lnr lnr-arrow-right"></span>
+								<a href="contact.xhtml"> Contact Us</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				</section>
+				<!-- End banner Area -->
+				<!-- Start contact-page Area -->
+				<section class="contact-page-area section-gap">
+				<div class="container">
+					
+					<div class="row">
+						<div class="map-wrap" style="width: 100%; height: 200px;"></div>
+						<div class="col-lg-4 d-flex flex-column address-wrap">
+							<div class="single-contact-address d-flex flex-row">
+								<div class="icon">
+									<span class="lnr lnr-home"></span>
+								</div>
+								<div class="contact-details">
+									<h5>Remera, Stadium</h5>
+									<p>56/8, street</p>
+								</div>
+							</div>
+							<div class="single-contact-address d-flex flex-row">
+								<div class="icon">
+									<span class="lnr lnr-phone-handset"></span>
+								</div>
+								<div class="contact-details">
+									<h5>00 (880) 9865 562</h5>
+									<p>Mon to Fri 9am to 6 pm</p>
+								</div>
+							</div>
+							<div class="single-contact-address d-flex flex-row">
+								<div class="icon">
+									<span class="lnr lnr-envelope"></span>
+								</div>
+								<div class="contact-details">
+									<h5>hernzayisenga@gmail.com</h5>
+									<p>Send us your query anytime!</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-8">
+							<h:form class=" contact-form text-right form-area ">
+								<div class="row">
+									<div class="col-lg-6 form-group">
+										<h:inputText name="name" a:placeholder="Enter your firstname"
+											id="fname" onfocus="this.placeholder = ''"
+											onblur="this.placeholder = 'Enter firstname'"
+											class="common-input mb-20 form-control" required="true"
+											a:type="text" style="font-size: 13px;"
+											validatorMessage="#{msg['error.enter.invalid.fname']}"
+											converterMessage="#{msg['error.enter.invalid.fname']}"
+											requiredMessage="#{msg['requiered.fname.message']}" value="#{registrationRequestController.request.fname}">
+											<f:validateRegex
+												pattern="#{regex['regex.validation.message.VALID.FIRST_NAME']}" />
+											<f:validateLength maximum="35" />
+										</h:inputText>
+										<h:message errorClass="errorMsg1" for="fname"
+											style="font-size:12px;font-family:Time New Roman;"></h:message>
+										<h:inputText name="lname" a:placeholder="Enter your lastname"
+											id="lname" style="font-size: 13px;"
+											onfocus="this.placeholder = ''"
+											onblur="this.placeholder = 'Enter your lastname'"
+											class="common-input mb-20 form-control" required="true"
+											a:type="text"
+											validatorMessage="#{msg['error_institution.enter.invalid.lname']}"
+											converterMessage="#{msg['error_institution.enter.invalid.lname']}"
+											requiredMessage="#{msg['requiered.lname.message']}" value="#{registrationRequestController.request.lname}">
+											<f:validateRegex
+												pattern="#{regex['regex.validation.message.VALID.FIRST_NAME']}" />
+											<f:validateLength maximum="35" />
+										</h:inputText>
+										<h:message for="lname" styleClass="help-block" style="font-size:12px;font-family:Time New Roman;"></h:message>
+										<h:inputText name="phone" a:placeholder="Enter your phone"
+											id="phone" style="font-size: 13px;"
+											onfocus="this.placeholder = ''"
+											onblur="this.placeholder = 'Enter your phone'"
+											class="common-input mb-20 form-control" required="true"
+											type="text"
+											requiredMessage="#{msg['requiered.phone.message']}" value="#{registrationRequestController.phone}">
+
+										</h:inputText>
+										<h:message errorClass="errorMsg1" for="phone"
+											style="font-size:12px;font-family:Time New Roman;"></h:message>
+										<h:inputText name="email" id="email"
+											a:placeholder="Enter email address" style="font-size: 13px;"
+											pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$"
+											onfocus="this.placeholder = ''"
+											onblur="this.placeholder = 'Enter email address'"
+											class="common-input mb-20 form-control" required="true"
+											a:type="email"
+											validatorMessage="#{msg['error.enter.invalid.email']}"
+											converterMessage="#{msg['error.enter.invalid.email']}"
+											requiredMessage="#{msg['error.enter.required.email']}" value="#{registrationRequestController.email}">
+											<f:validateRegex pattern="#{regex['regex.validation.email']}" />
+										</h:inputText>
+										<h:message errorClass="errorMsg1" for="email"
+											style="font-size:12px;font-family:Time New Roman;"></h:message>
+											
+											<h:inputText name="subject" a:placeholder="Enter your address" value="#{registrationRequestController.request.address}"
+											style="font-size: 13px margin-top:5%;" onfocus="this.placeholder = ''"
+											onblur="this.placeholder = 'Enter your address'"
+											class="common-input mb-20 form-control" required="true"
+											 a:type="text" id="add"
+											validatorMessage="#{msg['error_institution.enter.invalid.address']}"
+											converterMessage="#{msg['error_institution.enter.invalid.address']}"
+											requiredMessage="#{msg['requiered.address.message']}">
+											<f:validateRegex
+												pattern="#{regex['regex.validation.message.VALID.FIRST_NAME']}" />
+											<f:validateLength maximum="35" />
+										</h:inputText>
+										<h:message errorClass="errorMsg1" for="add"
+											style="font-size:12px;font-family:Time New Roman;"></h:message>
+										
+											<h:inputText name="subject" a:placeholder="Enter your subject" value="#{registrationRequestController.request.subject}"
+											style="font-size: 13px margin-top:5%;" onfocus="this.placeholder = ''"
+											onblur="this.placeholder = 'Enter your subject'"
+											class="common-input mb-20 form-control" required="true"
+											 a:type="text" id="subject"
+											validatorMessage="#{msg['error_institution.enter.invalid.subject']}"
+											converterMessage="#{msg['error_institution.enter.invalid.subject']}"
+											requiredMessage="#{msg['requiered.subject.message']}">
+											<f:validateRegex
+												pattern="#{regex['regex.validation.message.VALID.FIRST_NAME']}" />
+											<f:validateLength maximum="35" />
+										</h:inputText>
+										<h:message errorClass="errorMsg1" for="subject"
+												style="font-size:12px;font-family:Time New Roman;"></h:message>
+										<div class="mt-20 alert-msg" style="text-align: left;"></div>
+										<div class="form-select ">
+											<h:selectOneMenu id="genders"
+												styleClass="common-input mb-20 form-control"
+												style="font-family: Open Sans sans-serif !important; font-size: 14px !important;"
+												required="true"
+												value="#{registrationRequestController.request.gender}"
+												requiredMessage="#{msg['requiered.gender.message']}">
+												<f:selectItem
+													itemLabel="#{msg['common.message.select.PLACEHOLDER']}"
+													itemValue="#{null}" escapeItem="true" itemDisabled="true" />
+												<f:selectItem itemLabel="Male" itemValue="Male" />
+												<f:selectItem itemLabel="Female" itemValue="Female" />
+
+											</h:selectOneMenu>
+											<h:message errorClass="errorMsg1" for="genders"
+												style="font-size:12px;font-family:Time New Roman;"/>
+										</div>
+										
+										<div class="mt-20 alert-msg" style="text-align: left;"></div>
+										<div class="form-select ">
+											<h:selectOneMenu id="role"
+												styleClass="common-input mb-20 form-control"
+												style="font-family: Open Sans sans-serif !important; font-size: 14px !important;"
+												required="true"
+												value="#{registrationRequestController.userRole}"
+												requiredMessage="#{msg['requiered.request.message']}">
+												<f:selectItem itemLabel="Select your role"
+													itemValue="#{null}" escapeItem="true" itemDisabled="true" />
+												<f:selectItem itemLabel="Club representative"
+													itemValue="representative" />
+												<f:selectItem itemLabel="Guest user" itemValue="guest" />
+											</h:selectOneMenu>
+											<h:message errorClass="errorMsg1" for="role"
+												style="font-size:12px;font-family:Time New Roman;"></h:message>
+										</div>
+									</div>
+									<div class="col-lg-6 form-group">
+
+										<h:inputTextarea style="height: 78%; font-size: 14px;"
+											class="common-textarea form-control" name="message"
+											id="message" a:placeholder="Message"
+											onfocus="this.placeholder = ''"
+											onblur="this.placeholder = 'Message'" required="true"
+											validatorMessage="#{msg['error_institution.enter.invalid.description']}"
+											converterMessage="#{msg['error_institution.enter.invalid.description']}"
+											requiredMessage="#{msg['requiered.message']}" value="#{registrationRequestController.request.message}">
+											<f:validateRegex
+												pattern="#{regex['regex.validation.message.VALID.FIRST_NAME']}" />
+											<f:validateLength maximum="100" />
+										</h:inputTextarea>
+										<h:commandButton class="genric-btn primary circle mt-30" action="#{registrationRequestController.saveRegistration}"
+											style="float: right;" value="Send Message"/>
+										<h:message errorClass="errorMsg1" for="message"
+											style="font-size:12px;font-family:Time New Roman;"></h:message>
+									</div>
+
+								</div>
+								<p:growl id="messages" life="3000" />
+							</h:form>
+						</div>
+					</div>
+				</div>
+				</section>
+				<!-- End contact-page Area -->
+				<!-- start footer Area -->
+				<footer class="footer-area section-gap">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-5 col-md-6 col-sm-6">
+							<div class="single-footer-widget">
+								<h6>About Us</h6>
+								<p class="text-white pb-20">Lorem ipsum dolor sit amet,
+									consectetur adipisicing elit, sed do eiusmod tempor incididunt
+									ut labore dolore magna aliqua.</p>
+								<p class="footer-text text-white pb-20">
+									<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+									Copyright &copy;
+									<script>
+										document
+												.write(new Date().getFullYear());
+									</script>
+									All rights reserved | This template is made with <i
+										class="fa fa-heart-o" aria-hidden="true"></i> by <a
+										href="https://colorlib.com" target="_blank">Colorlib</a>
+									<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+								</p>
+							</div>
+						</div>
+						<div class="col-lg-5  col-md-6 col-sm-6">
+							<div class="single-footer-widget">
+								<h6>Newsletter</h6>
+								<p class="text-white pb-20">Stay update with our latest</p>
+								<div class="" id="mc_embed_signup">
+									<h:form target="_blank" novalidate="true"
+										class="form-inline form-wrap ">
+										<h:inputText class="form-control" name="EMAIL"
+											placeholder="Enter Email" onfocus="this.placeholder = ''"
+											onblur="this.placeholder = 'Enter Email '" required=""
+											type="email" />
+										<span style="height: 40px; width: 60px;"> <h:commandButton
+												value="Send"
+												class="click-btn glyphicon glyphicon-arrow-right"
+												style="padding: 17%; margin-top: 2px;" id="sendNewsLetter">
+											</h:commandButton></span>
+										<div style="position: absolute; left: -5000px;">
+											<h:inputText name="b_36c4fd991d266f23781ded980_aefe40901a"
+												tabindex="-1" value="" type="text" />
+										</div>
+
+										<div class="info"></div>
+									</h:form>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-2 col-md-6 col-sm-6 social-widget">
+							<div class="single-footer-widget">
+								<h6>Follow Us</h6>
+								<p class="text-white pb-20">Let us be social</p>
+								<div class="footer-social d-flex align-items-center">
+									<a href="#"><i class=" fa fa-facebook"></i></a> <a href="#"><i
+										class="fa fa-twitter"></i></a> <a href="#"><i
+										class="fa fa-dribbble"></i></a> <a href="#"><i
+										class="fa fa-behance"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				</footer>
+				<!-- End footer Area -->
+			</h:form>
+
+		</ui:define>
+
+	</ui:composition>
+</h:body>
+
+</html>

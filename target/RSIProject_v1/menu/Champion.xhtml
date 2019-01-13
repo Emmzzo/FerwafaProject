@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui" xmlns:b="http://bootsfaces.net/ui">
+<h:body>
+	<ui:composition template="/template/common/commonLayout.xhtml">
+
+		<ui:define name="content">
+			<div class="panel panel-info">
+				<!-- Default panel contents -->
+				<div class="panel-heading">
+					<table>
+						<tr>
+							<td>
+								<div>
+									<a
+										href="#{loadUserInformationsController.getContextPath()}/menu/Champion.xhtml"
+										class="btn btn-primary glyphicon glyphicon-chevron-left">
+										#{msg['UserCatForm.BackBoardButtom']} </a>
+								</div>
+							</td>
+							<td>&nbsp;&nbsp;<span style="color: white; font-size: 10pt">#{msg['header.title.fieldmarked']}
+									<span style="color: red">#{msg['header.title.asteriks']}</span>
+									#{msg['header.title.mandatory']}
+							</span></td>
+
+						</tr>
+					</table>
+
+				</div>
+				<div class="panel-body"
+					style="border: 0px solid blue; margin-top: 4px; height: auto; font-family: Open Sans sans-serif !important; font-size: 14px !important;">
+
+
+
+					<h:form>
+						<h:panelGroup layout="block"
+							rendered="#{not championController.valid and not facesContext.validationFailed}">
+							<ul>
+								<ui:repeat value="#{facesContext.messageList}"
+									var="facesMessage">
+									<li class="alert alert-danger"
+										style="list-style: none; background-color: #FF2400; color: white">
+										<center>
+											<h:outputText value="#{facesMessage.summary}" escape="false" />
+										</center>
+									</li>
+								</ui:repeat>
+							</ul>
+						</h:panelGroup>
+
+						<h:panelGroup layout="block"
+							rendered="#{championController.valid and  not facesContext.validationFailed}">
+							<ul>
+								<ui:repeat value="#{facesContext.messageList}"
+									var="facesMessage">
+									<li
+										style="list-style: none; background-color: #32CD32; color: white;"
+										class="alert alert-success"><h:outputText
+											value="#{facesMessage.summary}" escape="false" /></li>
+								</ui:repeat>
+							</ul>
+						</h:panelGroup>
+						<fieldset style="width: 100%;">
+
+							<legend>
+								<p:outputPanel rendered="#{championController.renderHeadForm}"
+									autoUpdate="true">
+									<label
+										style="font-family: Open Sans sans-serif !important; font-size: 14px !important;">#{msg['message.header.champion.info']}</label>
+								</p:outputPanel>
+								<p:outputPanel rendered="#{championController.renderHeadList}">
+									<label
+										style="font-family: Open Sans sans-serif !important; font-size: 14px !important;">#{msg['message.header.champion.list']}</label>
+								</p:outputPanel>
+							</legend>
+							<p:outputPanel rendered="#{championController.renderForm}"
+								autoUpdate="true">
+
+								<div class="main-login main-center"
+									style="width: 60%; margin-left: 10%;">
+									<h:form class="form-horizontal">
+
+										<div class="form-group">
+											<label for="name" class="cols-sm-2 control-label">Champion
+												Year<span style="color: red; font-size: 15px">*</span>
+											</label>
+											<div class="cols-md-12">
+												<div class="input-group">
+													<span class="input-group-addon"><i
+														class="glyphicon glyphicon-calendar" aria-hidden="true"></i></span>
+													<h:inputText a:type="text" class="form-control" name="name"
+														id="season" value="#{championController.championYear}"
+														a:placeholder="Enter champion year like[2018-2019]"
+														required="true"
+														validatorMessage="#{msg['error.enter.invalid.champion']}"
+														converterMessage="#{msg['error.enter.invalid.champion']}"
+														requiredMessage="#{msg['requiered.username.champion']}">
+														<f:validateRegex pattern="^((19|20)\d{2})-((19|20)\d{2})" />
+													</h:inputText>
+												</div>
+												<h:message for="season" styleClass="help-block"></h:message>
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="name" class="cols-sm-2 control-label">Start
+												Date<span style="color: red; font-size: 15px">*</span>
+											</label>
+											<div class="cols-md-12">
+												<div class="input-group">
+													<span class="input-group-addon"><i
+														class="glyphicon glyphicon-calendar" aria-hidden="true"></i></span>
+													<h:inputText locale="#{facesContext.viewRoot.locale}"
+														autocomplete="off" id="from_dob_date_id"
+														binding="#{from_dob_date_id}" class="form-control"
+														escape="true" value="#{championController.from}"
+														maxlength="35" required="true"
+														converterMessage="#{msg['validation.message.DATE_FORMAT']}"
+														requiredMessage="#{msg['startDate.message']}">
+														<f:convertDateTime type="date" dateType="short"
+															pattern="dd/MM/yyyy" />
+														<f:validateLength maximum="35" />
+													</h:inputText>
+													<script>
+														$(function() {
+															$(
+																	'input[id*="from_dob_date_id"]')
+																	.datepicker(
+																			{
+																				changeMonth : true,
+																				changeYear : true,
+																				//maxDate : 0,
+																				//minDate: 0,
+																				dateFormat : "dd/mm/yy",
+																				//yearRange : "-100:+0",
+																				buttonImage : "./resources/image/calendar1.png"
+																			});
+														});
+													</script>
+												</div>
+											</div>
+											<h:message for="from_dob_date_id" styleClass="help-block"></h:message>
+										</div>
+										<div class="form-group">
+											<label for="name" class="cols-sm-2 control-label">End
+												Date<span style="color: red; font-size: 15px">*</span>
+											</label>
+											<div class="cols-md-12">
+												<div class="input-group">
+													<span class="input-group-addon"><i
+														class="glyphicon glyphicon-calendar" aria-hidden="true"></i></span>
+													<h:inputText locale="#{facesContext.viewRoot.locale}"
+														autocomplete="off" id="from_dob_date_id1"
+														binding="#{from_dob_date_id1}" class="form-control"
+														escape="true" value="#{championController.to}"
+														maxlength="35" required="true"
+														converterMessage="#{msg['validation.message.DATE_FORMAT']}"
+														requiredMessage="#{msg['endDate.message']}">
+														<f:convertDateTime type="date" dateType="short"
+															pattern="dd/MM/yyyy" />
+														<f:validateLength maximum="35" />
+													</h:inputText>
+													<script>
+														$(function() {
+															$(
+																	'input[id*="from_dob_date_id1"]')
+																	.datepicker(
+																			{
+																				changeMonth : true,
+																				changeYear : true,
+																				//maxDate : 0,
+																				//minDate: 0,
+																				dateFormat : "dd/mm/yy",
+																				//yearRange : "-100:+0",
+																				buttonImage : "./resources/image/calendar1.png"
+																			});
+														});
+													</script>
+												</div>
+											</div>
+											<h:message for="from_dob_date_id1" styleClass="help-block"></h:message>
+										</div>
+										<div class="form-group row">
+											<label for="todate"
+												class="col-md-2 col-sm-2 col-xs-2 control-label"
+												style="color: black"></label>
+											<div class="col-md-6 col-sm-6 col-xs-6">
+												<h:commandButton class="btn btn-info btn-xlg btn-block"
+													action="#{championController.saveChampion()}"
+													value="#{msg['label.subimit.message.submit']}">
+												</h:commandButton>
+											</div>
+											<span class="text-danger" id="err"></span>
+										</div>
+									</h:form>
+								</div>
+							</p:outputPanel>
+
+
+							<!-- CHAMPION TABLE VIEW -->
+							<p:outputPanel rendered="#{championController.renderHeadList}"
+								autoUpdate="true">
+								<h:dataTable id="championTable" binding="#{table}"
+									style="font-family: Open Sans sans-serif !important; font-size: 14px !important;box-sizing: border-box; width:92% !important;
+       						 -webkit-box-shadow: none;
+       							 box-shadow: none !important;
+       								 margin: 17px 58px 0 !important;"
+									value="#{championController.chapDtoDetails}" var="info"
+									class="table table-striped table-hover table-bordered tableUpdated ">
+									<f:facet name="header">
+										<h:commandLink class="btn btn-primary"
+											value="#{msg['champForm.newchamp']}"
+											action="#{championController.newChampion()}"
+											style="font-family: Open Sans sans-serif !important; font-size: 14px !important;">
+										</h:commandLink>
+										<label style="margin-left: 15%;">List of Rwanda soccer
+											champion year</label>
+									</f:facet>
+
+									<h:column>
+										<f:facet name="header">
+											<label>No</label>
+										</f:facet><br/>
+										<h:outputText value="#{table.rowIndex + 1}" />
+									</h:column>
+									<h:column>
+										<f:facet name="header">
+											<label>Champion Status</label>
+										</f:facet>
+										<br/>
+										<h:outputText value="#{info.championStatus}" />
+									</h:column>
+									<h:column>
+										<f:facet name="header">
+											<label>Champion Year</label>
+										</f:facet>
+										<h:inputText a:type="text" class="form-control" name="name"
+											rendered="#{info.editable}" id="season"
+											value="#{info.championYear}"
+											a:placeholder="Enter champion year like[2018-2019]"
+											required="true"
+											validatorMessage="#{msg['error.enter.invalid.champion']}"
+											converterMessage="#{msg['error.enter.invalid.champion']}"
+											requiredMessage="#{msg['requiered.username.champion']}">
+											<f:validateRegex pattern="^((19|20)\d{2})-((19|20)\d{2})" />
+										</h:inputText>
+										<br />
+										<h:message errorClass="errorMsg1" for="season"
+											style="font-size:12px;font-family:Time New Roman;"></h:message>
+										<h:outputText value="#{info.championYear}"
+											rendered="#{not info.editable}" />
+									</h:column>
+										<h:column>
+											<f:facet name="header">
+												<label>StartDate</label>
+											</f:facet>
+											<p:outputPanel rendered="#{info.editable}">
+											<div class="cols-md-12">
+												<div class="input-group">
+													<span class="input-group-addon"><i
+														class="glyphicon glyphicon-calendar" aria-hidden="true"></i></span>
+											<h:inputText locale="#{facesContext.viewRoot.locale}" rendered="#{info.editable}"
+												autocomplete="off" id="from_dob_date_idtable"
+												binding="#{from_dob_date_idtable}" class="form-control"
+												escape="true" value="#{info.startDate}"
+												maxlength="35" required="true"
+												converterMessage="#{msg['validation.message.DATE_FORMAT']}"
+												requiredMessage="#{msg['endDate.message']}">
+												<f:convertDateTime type="date" dateType="short" 
+													pattern="dd/MM/yyyy" />
+												<f:validateLength maximum="35" />
+											</h:inputText>
+											<script>
+												$(function() {
+													$(
+															'input[id*="from_dob_date_idtable"]')
+															.datepicker(
+																	{
+																		changeMonth : true,
+																		changeYear : true,
+																		//maxDate : 0,
+																		//minDate: 0,
+																		dateFormat : "dd/mm/yy",
+																		//yearRange : "-100:+0",
+																		buttonImage : "./resources/image/calendar1.png"
+																	});
+												});
+											</script>
+											</div></div></p:outputPanel>
+											<br />
+										<h:message errorClass="errorMsg1" for="from_dob_date_idtable"
+											style="font-size:12px;font-family:Time New Roman;"></h:message>
+										<h:outputText value="#{info.startDate}"
+											rendered="#{not info.editable}" >
+											<f:convertDateTime pattern="dd/MM/yyyy" />
+											</h:outputText>
+										</h:column>
+										<h:column>
+											<f:facet name="header">
+												<label>EndDate</label>
+											</f:facet>
+											<p:outputPanel rendered="#{info.editable}">
+											<div class="cols-md-12">
+												<div class="input-group">
+													<span class="input-group-addon"><i
+														class="glyphicon glyphicon-calendar" aria-hidden="true"></i></span>
+											<h:inputText locale="#{facesContext.viewRoot.locale}" rendered="#{info.editable}"
+												autocomplete="off" id="from_dob_date_idtable2"
+												binding="#{from_dob_date_idtable2}" class="form-control"
+												escape="true" value="#{info.endDate}"
+												maxlength="35" required="true"
+												converterMessage="#{msg['validation.message.DATE_FORMAT']}"
+												requiredMessage="#{msg['endDate.message']}">
+												<f:convertDateTime type="date" dateType="short" 
+													pattern="dd/MM/yyyy" />
+												<f:validateLength maximum="35" />
+											</h:inputText>
+											<script>
+												$(function() {
+													$(
+															'input[id*="from_dob_date_idtable2"]')
+															.datepicker(
+																	{
+																		changeMonth : true,
+																		changeYear : true,
+																		//maxDate : 0,
+																		//minDate: 0,
+																		dateFormat : "dd/mm/yy",
+																		//yearRange : "-100:+0",
+																		buttonImage : "./resources/image/calendar1.png"
+																	});
+												});
+											</script>
+											</div></div></p:outputPanel>
+											<br />
+										<h:message errorClass="errorMsg1" for="from_dob_date_idtable2"
+											style="font-size:12px;font-family:Time New Roman;"></h:message>
+										<h:outputText value="#{info.endDate}"
+											rendered="#{not info.editable}" >
+											<f:convertDateTime pattern="dd/MM/yyyy" />
+											</h:outputText>
+										</h:column>
+										<h:column>
+										<f:facet name="header">
+											<label>Action</label>
+										</f:facet>
+										<div class="btn-group btn btn-sm" role="group" 
+											aria-label="Basic example">
+											<h:commandLink data-toggle="tooltip" data-placement="left"
+												title="#{msg['UserCategoryView.editButton']}"
+												class="btn btn-success btn-sm glyphicon glyphicon-edit"
+												action="#{championController.editAction(info)}"
+												rendered="#{not info.editable}">
+											</h:commandLink>
+											<h:commandLink data-toggle="tooltip" data-placement="left"
+												title="#{msg['UserCategoryView.cancelButton']}"
+												class="btn btn-danger btn-sm glyphicon glyphicon-remove"
+												action="#{championController.cancel(info)}"
+												rendered="#{info.editable}">
+											</h:commandLink>
+											<h:commandLink
+												class="btn btn-primary btn-sm glyphicon glyphicon-floppy-disk"
+												style="color:white;" data-toggle="tooltip"
+												data-placement="right"
+												title="#{msg['UserCategoryView.savechangeButton']}"
+												action="#{championController.saveChampionAction(info)}"
+												rendered="#{info.editable}">
+
+											</h:commandLink>
+
+										</div>
+									</h:column>
+									<f:facet name="footer">
+										<label>Show Data By Range:</label>
+										<h:selectOneMenu value="#{championController.range}">
+											<f:selectItem itemLabel="5" itemValue="5" />
+											<f:selectItem itemLabel="10" itemValue="10" />
+											<f:selectItem itemLabel="15" itemValue="15" />
+											<f:selectItem itemLabel="All" itemValue="All" />
+											<f:ajax render="@form" execute="@form" onevent="showProgress"
+												listener="#{championController.showChampion()}" />
+										</h:selectOneMenu>
+									</f:facet>
+								</h:dataTable>
+							</p:outputPanel>
+							<!-- END OF CHAMPION VIEW -->
+
+						</fieldset>
+
+					</h:form>
+
+				</div>
+			</div>
+
+
+
+		</ui:define>
+
+	</ui:composition>
+</h:body>
+
+</html>

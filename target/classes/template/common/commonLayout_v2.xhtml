@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+
+
+<h:head>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="shortcut icon" href="img/fav.png" />
+	<!-- Author Meta -->
+	<meta name="author" content="codepixer" />
+	<!-- Meta Description -->
+	<meta name="description" content="" />
+	<!-- Meta Keyword -->
+	<meta name="keywords" content="" />
+	<h:outputStylesheet name="normalize.css" library="css" />
+	<h:outputStylesheet name="bootstrap.css" library="css" />
+	<h:outputStylesheet name="bootstrap-glyphicons.css" library="css" />
+	<!-- Css for Admin Portral -->
+	<h:outputStylesheet name="themify-icons.css" library="css" />
+	<h:outputStylesheet name="flag-icon.min.css" library="css" />
+	<h:outputStylesheet name="cs-skin-elastic.css" library="css" />
+	<h:outputStylesheet name="style.css" library="css" />
+	<h:outputStylesheet name="jqvmap.min.css" library="css" />
+	<h:outputStylesheet name="font-awesome.min.css" library="css" />
+	<!-- <h:outputStylesheet name="main.css" library="css" />  -->
+	<h:outputStylesheet name="cssTheme.css" library="css" />
+	<h:outputStylesheet name="fontMin.css" library="css" />
+	<h:outputStylesheet name="google.css" library="css" />
+	<h:outputStylesheet name="w3.css" library="css" />
+	<h:outputScript library="js" name="jquery-3.js" target="head" />
+	<h:outputStylesheet name="bootstrap.min_1.css" library="css" />
+	<h:outputStylesheet name="bootstrap-glyphicons.css" library="css" />
+	<h:outputScript library="js" name="bootstrap.min.js" />
+	<!-- For date Picker -->
+	<script type="text/javascript"
+		src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" />
+	<h:outputStylesheet name="jquery-ui.css" library="css" />
+	<link rel="stylesheet"
+		href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+	<h:outputScript library="js" name="formatDatePicker.js" />
+
+	<!--End  For date Picker -->
+	<link
+		href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"
+		rel="stylesheet" />
+	<h:outputStylesheet name="bootstrap-fileupload.min.css" library="css" />
+	<h:outputStylesheet name="loading.css" library="css" />
+	<h:outputScript library="js" name="loading.js" />
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" />
+	<!-- End for css admin portral -->
+
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<!-- End of Home page css style -->
+
+	<!--  Industry Main Home page javascript file
+	-->
+	<!-- <h:outputScript library="js" name="main.js" /> -->
+	<!-- Script for Admin portral -->
+	<!-- 	 <h:outputScript library="js" name="jquery-2.1.4.min.js" /> -->
+
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" />
+	<!-- End of script admin portral -->
+
+	<!-- DataGrid JavaScript & CSS -->
+	<!-- <h:outputScript library="js" name="jquery.min.js" /> -->
+
+	<!--  <h:outputStylesheet library="css" name="bootstrap.min.css" /> -->
+	 <h:outputStylesheet library="css" name="simplePagination.css" /> 
+	<h:outputStylesheet library="css" name="table-style.css"  />
+	<h:outputScript library="js" name="simplePagination.js" />
+	<style>
+html, body, h1, h2, h3, h4, h5 {
+	font-family: "Open Sans", sans-serif
+}
+
+.errorMsg1 {
+	color: red
+}
+
+.help-block {
+	color: red
+}
+
+#home {
+	background: url(./resources/image/header-bg.jpg) center;
+	background-size: cover;
+}
+
+#sendNewsLetter {
+	background-color: #fab700;
+	color: #fff;
+	border-radius: 0;
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+	padding: 10px 12px;
+	border: 0;
+}
+
+.navbar {
+	background: #272c33;
+	border-radius: 0;
+	border: none;
+	display: block;
+	margin: 0;
+	margin-bottom: 100px;
+	padding: 0;
+}
+
+.tableUpdated {
+	width: 90% !important;
+	margin: 17px 58px 0 !important;
+}
+</style>
+</h:head>
+
+<h:body class="w3-theme-l5">
+	<aside id="left-panel" class="left-panel"> <ui:insert
+		name="sideBar">
+		<ui:include src="/template/common/commonSideBar_v2.xhtml" />
+	</ui:insert> </aside>
+
+	<div id="right-panel" class="right-panel">
+		<ui:insert name="rightBar">
+			<ui:include src="/template/common/commonRightBar_v2.xhtml" />
+		</ui:insert>
+		<div class="w3-container w3-content"
+			style="max-width: 100%; margin-top: 63px;">
+			<div class="w3-row">
+				<!-- Content -->
+				<div id="page" style="margin-left: 3%; width: 110%">
+					<div class="w3-col m10 ">
+						<div class="w3-row-padding">
+							<div class="w3-col m12">
+								<div class="w3-card w3-round w3-white">
+									<div class="w3-container w3-padding">
+										<div class="container-2">
+											<div id="page-wrappe">
+												<!-- Loding functionality -->
+
+												<!-- The Modal -->
+												<div id="myModal" class="modal" style="z-index: 100;">
+
+													<!-- Modal content -->
+													<div class="modal-content">
+
+														<p:graphicImage id="loadingImage"
+															name="/image/preload_waiting.gif" style="width:99%" />
+
+													</div>
+
+												</div>
+
+
+												<!--End loading  -->
+												<ui:insert name="content">
+													<ui:include src="/template/common/commonContent.xhtml" />
+												</ui:insert>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end main Content -->
+	</div>
+
+
+	<script>
+		(function($) {
+			"use strict";
+
+			jQuery('#vmap').vectorMap({
+				map : 'world_en',
+				backgroundColor : null,
+				color : '#ffffff',
+				hoverOpacity : 0.7,
+				selectedColor : '#1de9b6',
+				enableZoom : true,
+				showTooltip : true,
+				values : sample_data,
+				scaleColors : [ '#1de9b6', '#03a9f5' ],
+				normalizeFunction : 'polynomial'
+			});
+		})(jQuery);
+	</script>
+</h:body>
+
+</html>

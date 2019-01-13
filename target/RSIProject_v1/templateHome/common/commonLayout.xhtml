@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+
+
+<h:head>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="shortcut icon" href="img/fav.png" />
+	<!-- Author Meta -->
+	<meta name="author" content="codepixer" />
+	<!-- Meta Description -->
+	<meta name="description" content="" />
+	<!-- Meta Keyword -->
+	<meta name="keywords" content="" />
+
+	<h:outputStylesheet name="cssTheme.css" library="css" />
+	<h:outputStylesheet name="fontMin.css" library="css" />
+	<h:outputStylesheet name="google.css" library="css" />
+	<h:outputStylesheet name="w3.css" library="css" />
+	<h:outputScript library="js" name="jquery-3.js" target="head" />
+	<h:outputStylesheet name="bootstrap.min_1.css" library="css" />
+	<h:outputStylesheet name="bootstrap-glyphicons.css" library="css" />
+
+	<!-- For date Picker -->
+	<script type="text/javascript"
+		src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" />
+	<h:outputStylesheet name="jquery-ui.css" library="css" />
+	<link rel="stylesheet"
+		href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+	<h:outputScript library="js" name="formatDatePicker.js" />
+
+	<!--End  For date Picker -->
+	<link
+		href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"
+		rel="stylesheet" />
+	<!--  Industry Main Home page css style-->
+	<h:outputStylesheet name="linearicons.css" library="css" />
+	<!-- <h:outputStylesheet name="font-awesome.min.css" library="css" /> -->
+	<h:outputStylesheet name="bootstrap.css" library="css" />
+	<h:outputStylesheet name="magnific-popup.css" library="css" />
+	<h:outputStylesheet name="nice-select.css" library="css" />
+	<h:outputStylesheet name="hexagons.min.css" library="css" />
+	<h:outputStylesheet name="animate.min.css" library="css" />
+	<h:outputStylesheet name="owl.carousel.css" library="css" />
+	<h:outputStylesheet name="main.css" library="css" />
+	<link
+		href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700"
+		rel="stylesheet" />
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<!-- End of Home page css style -->
+
+	<!--  Industry Main Home page javascript file-->
+	<h:outputScript library="js" name="bootstrap.min.js" />
+	<h:outputScript library="js" name="jquery-2.2.4.min.js" />
+	<h:outputScript library="js" name="easing.min.js" />
+	<h:outputScript library="js" name="hoverIntent.js" />
+	<h:outputScript library="js" name="superfish.min.js" />
+	<h:outputScript library="js" name="jquery.ajaxchimp.min.js" />
+	<h:outputScript library="js" name="jquery.magnific-popup.min.js" />
+	<h:outputScript library="js" name="owl.carousel.min.js" />
+	<h:outputScript library="js" name="hexagons.min.js" />
+	<h:outputScript library="js" name="jquery.nice-select.min.js" />
+	<h:outputScript library="js" name="jquery.counterup.min.js" />
+	<h:outputScript library="js" name="waypoints.min.js" />
+	<h:outputScript library="js" name="mail-script.js" />
+	<h:outputScript library="js" name="main.js" />
+
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" />
+	<script type="text/javascript"
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA" />
+	<!-- Modal event script -->
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" />
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" />
+	<!-- End of Home page javascript file -->
+
+	<style>
+html, body, h1, h2, h3, h4, h5 {
+	font-family: "Open Sans", sans-serif
+}
+
+.errorMsg1 {
+	color: red
+}
+
+.help-block {
+	color: red
+}
+
+#home {
+	background: url(./resources/image/nationteam.jpg) center;
+	background-size: cover;
+}
+
+#sendNewsLetter {
+	background-color: #fab700;
+	color: #fff;
+	border-radius: 0;
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+	padding: 10px 12px;
+	border: 0;
+}
+
+.modal-header, h3, .close {
+	background-color: #5cb85c;
+	color: white !important;
+	text-align: center;
+	font-family: Open Sans sans-serif !important;
+	font-size: 20px !important;
+}
+
+.modal-footer {
+	background-color: #f9f9f9;
+	font-family: Open Sans sans-serif !important;
+	font-size: 14px !important;
+}
+
+.modal-body {
+	font-family: Open Sans sans-serif !important;
+	font-size: 14px !important;
+}
+
+h3 {
+	margin-left: 35%;
+}
+</style>
+</h:head>
+
+<h:body class="w3-theme-l5">
+	<div class="w3-top">
+		<div id="header" style="height:22%">
+			<ui:insert name="header">
+				<ui:include src="/templateHome/common/commonHeader.xhtml" />
+			</ui:insert>
+		</div>
+	</div>
+
+	<!-- End Header -->
+	<!-- Banner start -->
+	<div id="page-wrappe">
+
+		<ui:insert name="content">
+			<ui:include src="/templateHome/common/commonBanner.xhtml" />
+		</ui:insert>
+	</div>
+	<!-- End Banner -->
+	<!-- Contact page start -->
+
+	<!-- End of contact page -->
+	<!--  main container-->
+
+	<!-- end main Content -->
+
+	<!-- footer  -->
+	<!-- End footer -->
+	<!-- Modal script -->
+
+	<div class="container">
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" role="dialog">
+			<div class="modal-dialog modal-md">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header" style="padding: 20px 15px;">
+						<h3>
+							<span class="glyphicon glyphicon-lock"></span> Login
+						</h3>
+						<button type="button" class="close" data-dismiss="modal"
+							style="float: right;">&times;</button>
+
+					</div>
+					<div class="modal-body" style="padding: 40px 50px;">
+					<!-- Server Side validation message -->
+						<h:panelGroup layout="block"
+							rendered="#{not loginController.valid and not facesContext.validationFailed}">
+							<ul>
+								<ui:repeat value="#{facesContext.messageList}"
+									var="facesMessage">
+									<li class="alert alert-danger"
+										style="list-style: none; background-color: #FF2400; color: white">
+										<center>
+											<h:outputText value="#{facesMessage.summary}" escape="false" />
+										</center>
+									</li>
+								</ui:repeat>
+							</ul>
+						</h:panelGroup>
+
+						<h:panelGroup layout="block"
+							rendered="#loginController.valid and  not facesContext.validationFailed}">
+							<ul>
+								<ui:repeat value="#{facesContext.messageList}"
+									var="facesMessage">
+									<li
+										style="list-style: none; background-color: #32CD32; color: white; margin-left: -4.9%"
+										class="alert alert-success"><h:outputText
+											value="#{facesMessage.summary}" escape="false" /></li>
+								</ui:repeat>
+							</ul>
+						</h:panelGroup>
+						
+						<!-- End of server side validation -->
+						<h:form role="form">
+							<div class="form-group">
+								<label for="usrname"><span
+									class="glyphicon glyphicon-user"></span> Username</label>
+								<!-- <input
+									type="email" class="form-control" id="usrname"
+									placeholder="Enter email" required="" /> -->
+
+								<h:inputText class="form-control" id="usrname"
+									a:placeholder="Enter email" a:type="email"
+									requiredMessage="#{msg['requiered.username.message']}"
+									value="#{loginController.users.email}" required="true"
+									autocomplete="off" type="email" />
+								<h:message errorClass="errorMsg1" for="usrname"></h:message>
+							</div>
+							<div class="form-group">
+								<label for="password"><span
+									class="glyphicon glyphicon-eye-open"></span> Password</label>
+								<h:inputText class="form-control" required="true"
+									a:placeholder="Enter password"
+									requiredMessage="#{msg['requiered.username.password']}"
+									a:type="password" id="password" autocomplete="off"
+									value="#{loginController.users.password}"></h:inputText>
+								<h:message errorClass="errorMsg1" for="password"></h:message>
+							</div>
+							<div class="checkbox">
+								<label><input type="checkbox" value="" checked="checked" />Remember
+									me</label>
+							</div>
+							<h:commandButton a:type="submit"
+								action="#{loginController.validateUsernamePassword}"
+								value="#{msg['label.subimit.message.login']}"
+								class="btn btn-success btn-block">
+								<span class="glyphicon glyphicon-off"
+									style="top: -23px; left: 42%;"></span>
+							</h:commandButton>
+						</h:form>
+					</div>
+					<div class="modal-footer">
+						<button type="submit" class="btn btn-danger btn-default pull-left"
+							data-dismiss="modal">
+							<span class="glyphicon glyphicon-remove"></span> Cancel
+						</button>
+						<p>
+							Not a member? <a href="contact.xhtml">Sign Up</a>
+						</p>
+						<p>
+							Forgot <a href="#">Password?</a>
+						</p>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- End Modal -->
+	<script>
+		$(document).ready(function() {
+			$("#myBtn").click(function() {
+				$("#myModal").modal();
+			});
+		});
+	</script>
+	<!-- End of script modal -->
+</h:body>
+
+</html>

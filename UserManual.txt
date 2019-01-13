@@ -1,0 +1,5 @@
+Instruction
+-----------
+1.Create a database in your mysql server db call it :' ferwafadb'
+
+2.Update Hibernate configuration Files  accordingly:username,password,database port,database name.

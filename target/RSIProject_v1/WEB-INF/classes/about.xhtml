@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<h:head>
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1,maximum-sacale=1" />
+</h:head>
+<h:body>
+	<ui:composition template="/templateHome/common/commonStyle.xhtml">
+		<ui:define name="content">
+			<h:form>
+				<!-- start banner Area -->
+				<section class="banner-area relative" id="home">
+				<div class="overlay overlay-bg"></div>
+				<div class="container">
+					<div class="row d-flex align-items-center justify-content-center">
+						<div class="about-content col-lg-12">
+							<h1 class="text-white">About Us</h1>
+							<p class="text-white link-nav">
+								<a href="home.xhtml">Home </a> <span class="lnr lnr-arrow-right"></span>
+								<a href="about.xhtml"> About Us</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				</section>
+				<!-- End banner Area -->
+
+
+				<section class="home-about-area section-gap aboutus-about"
+					id="about">
+				<div class="container">
+					<div class="row justify-content-center align-items-center">
+						<div class="col-lg-8 col-md-12 home-about-left">
+							<h6>Brand new app to blow your mind</h6>
+							<h1>
+								We’ve made a life <br /> that will change you
+							</h1>
+							<p class="sub">We are here to listen from you deliver
+								exellence</p>
+							<p class="pb-20">Lorem ipsum dolor sit amet, consectetur
+								adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+								dolore magna aliqua. Ut enim ad minim. Lorem ipsum dolor sit
+								amet, consectetur adipisicing elit, sed do eiusmod temp or
+								incididunt ut labore et dolore magna aliqua. Ut enim ad minim.
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+								eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+								enim ad minim.</p>
+							<a class="primary-btn" href="#">Get Started Now</a>
+						</div>
+						<div class="col-lg-8">
+							<form class=" contact-form text-right form-area " id="myForm"
+								action="mail.php" method="post">
+								<div class="row">
+									<div class="col-lg-6 form-group">
+
+										<div class="mt-20 alert-msg" style="text-align: left;"></div>
+									</div>
+									<div class="col-lg-6 form-group"></div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				</section>
+
+				<!-- start footer Area -->
+				<footer class="footer-area section-gap">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-5 col-md-6 col-sm-6">
+							<div class="single-footer-widget">
+								<h6>About Us</h6>
+								<p class="text-white pb-20">Lorem ipsum dolor sit amet,
+									consectetur adipisicing elit, sed do eiusmod tempor incididunt
+									ut labore dolore magna aliqua.</p>
+								<p class="footer-text text-white pb-20">
+									<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+									Copyright &copy;
+									<script>
+										document
+												.write(new Date().getFullYear());
+									</script>
+									All rights reserved | This template is made with <i
+										class="fa fa-heart-o" aria-hidden="true"></i> by <a
+										href="https://colorlib.com" target="_blank">Colorlib</a>
+									<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+								</p>
+							</div>
+						</div>
+						<div class="col-lg-5  col-md-6 col-sm-6">
+							<div class="single-footer-widget">
+								<h6>Newsletter</h6>
+								<p class="text-white pb-20">Stay update with our latest</p>
+								<div class="" id="mc_embed_signup">
+									<h:form target="_blank" novalidate="true"
+										class="form-inline form-wrap ">
+										<input class="form-control" name="EMAIL"
+											placeholder="Enter Email" onfocus="this.placeholder = ''"
+											onblur="this.placeholder = 'Enter Email '" required=""
+											type="email" />
+										<span style="height: 40px; width: 60px;"> <h:commandButton
+												value="Send"
+												class="click-btn glyphicon glyphicon-arrow-right"
+												style="padding: 17%; margin-top: 2px;"
+												id="sendNewsLetter">
+											</h:commandButton></span>
+										<div style="position: absolute; left: -5000px;">
+											<input name="b_36c4fd991d266f23781ded980_aefe40901a"
+												tabindex="-1" value="" type="text" />
+										</div>
+
+										<div class="info"></div>
+									</h:form>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-2 col-md-6 col-sm-6 social-widget">
+							<div class="single-footer-widget">
+								<h6>Follow Us</h6>
+								<p class="text-white pb-20">Let us be social</p>
+								<div class="footer-social d-flex align-items-center">
+									<a href="#"><i class=" fa fa-facebook"></i></a> <a href="#"><i
+										class="fa fa-twitter"></i></a> <a href="#"><i
+										class="fa fa-dribbble"></i></a> <a href="#"><i
+										class="fa fa-behance"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				</footer>
+				<!-- End footer Area -->
+			</h:form>
+
+		</ui:define>
+
+	</ui:composition>
+</h:body>
+
+</html>
